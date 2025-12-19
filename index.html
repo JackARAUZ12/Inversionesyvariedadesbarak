@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inversiones y Variedades Barak LX | Cosméticos Premium</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #c48a2c;
+      --gold-light: #f0c36b;
+      --dark: #0a0a0a;
+      --dark-soft: #141414;
+      --white: #ffffff;
+      --text-soft: #cccccc;
+      --glass: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1b1b1b, #000000);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ===================== GLOBAL ===================== */
+    section {
+      padding: 120px 8%;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 45px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #000;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: .5px;
+      box-shadow: 0 0 30px rgba(196,138,44,0.6);
+      transition: all .35s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 0 50px rgba(196,138,44,0.9);
+    }
+
+    /* ===================== NAVBAR ===================== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 8%;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    nav img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width .3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* ===================== HERO ===================== */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 160px 8% 100px;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(196,138,44,0.15), rgba(0,0,0,0.95));
+    }
+
+    .hero {
+      max-width: 1000px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .logo-space {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 40px;
+      border-radius: 50%;
+      background: var(--glass);
+      border: 2px dashed var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      margin: 25px auto 0;
+      max-width: 750px;
+      font-size: 1.15rem;
+      color: var(--text-soft);
+    }
+
+    .hero-actions {
+      margin-top: 55px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    /* ===================== ABOUT ===================== */
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+      border-radius: 25px;
+      padding: 45px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .about-box h2 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+
+    .about-box span {
+      color: var(--gold);
+    }
+
+    .about-box p {
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      line-height: 1.8;
+    }
+
+    /* ===================== PRODUCTS ===================== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-title h2 {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+
+    .section-title span {
+      color: var(--gold);
+    }
+
+    .section-title p {
+      margin-top: 15px;
+      color: var(--text-soft);
+      max-width: 650px;
+      margin-inline: auto;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 45px;
+    }
+
+    .product-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border-radius: 25px;
+      padding: 35px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      position: relative;
+      overflow: hidden;
+      transition: all .45s ease;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(196,138,44,0.3), transparent);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
+    }
+
+    .product-card:hover {
+      transform: translateY(-14px);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.7);
+    }
+
+    .product-image {
+      height: 220px;
+      border-radius: 18px;
+      background: var(--glass);
+      border: 2px dashed var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .product-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .product-card p {
+      margin: 15px 0 30px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .buy-btn {
+      display: block;
+      text-align: center;
+      padding: 15px 0;
+      border-radius: 45px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #000;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all .35s ease;
+    }
+
+    .buy-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(196,138,44,0.8);
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      background: #000;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer p {
+      color: #aaa;
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    /* ===================== ANIMATIONS ===================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(45px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="brand">
+      <img src="logo.png" alt="Barak LX Logo">
+      Barak LX
+    </div>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="https://wa.me/50575473089" target="_blank">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="inicio">
+    <div class="hero">
+      <div class="logo-space">ESPACIO PARA LOGOTIPO</div>
+      <h1>Inversiones y Variedades <span>Barak LX</span></h1>
+      <p>Somos una empresa dedicada a la comercialización de cosméticos y productos de cuidado personal, combinando elegancia, calidad y confianza en cada detalle.</p>
+      <div class="hero-actions">
+        <a href="#productos" class="btn-primary">Ver catálogo</a>
+        <a href="https://wa.me/50575473089" target="_blank" class="btn-primary">Comprar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="nosotros">
+    <div class="about" data-aos="fade-up">
+      <div class="about-box">
+        <h2>Nuestra <span>Esencia</span></h2>
+        <p>En Barak LX creemos que la belleza es una expresión de confianza, bienestar y amor propio. Por eso seleccionamos cuidadosamente cada producto que ofrecemos.</p>
+        <p>Nuestro compromiso es brindar cosméticos confiables, modernos y accesibles, respaldados por una atención personalizada y profesional.</p>
+      </div>
+      <div class="about-box">
+        <h2>Visión & <span>Calidad</span></h2>
+        <p>Aspiramos a posicionarnos como una marca referente en el mercado nacional, destacándonos por nuestra presentación premium y nuestra ética de trabajo.</p>
+        <p>Cada cliente es una prioridad, y cada compra representa una experiencia de excelencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="productos">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Catálogo de <span>Productos</span></h2>
+      <p>Descubre nuestra variedad de cosméticos diseñados para realzar tu belleza natural.</p>
+    </div>
+
+    <div class="products">
+      <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="product-image">Imagen del producto</div>
+        <h3>Nombre del producto</h3>
+        <p>Descripción detallada del cosmético, beneficios, tipo de piel y modo de uso.</p>
+        <a href="https://wa.me/50575473089" target="_blank" class="buy-btn">Adquirir ya</a>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="product-image">Imagen del producto</div>
+        <h3>Nombre del producto</h3>
+        <p>Descripción detallada del cosmético, beneficios, tipo de piel y modo de uso.</p>
+        <a href="https://wa.me/50575473089" target="_blank" class="buy-btn">Adquirir ya</a>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="product-image">Imagen del producto</div>
+        <h3>Nombre del producto</h3>
+        <p>Descripción detallada del cosmético, beneficios, tipo de piel y modo de uso.</p>
+        <a href="https://wa.me/50575473089" target="_blank" class="buy-btn">Adquirir ya</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Inversiones y Variedades Barak LX<br>Cosméticos · Belleza · Confianza</p>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1300, once: true });
+  </script>
+
+</body>
+</html>
